@@ -56,21 +56,14 @@ def add_sales_record():
     except FileNotFoundError:
         # if file not found then create
         print('Not found')
-
         fhand = open('sales_log.txt' 'x')
         #fhand.write('Name|Quantity|Price Per Unit|Total Amount')
-    #new
-    if len(fhand.read()) == 0:
-        fhand.write('Name|Quantity|Price Per Unit|Total Amount')
-    #new
+
     # calculates then inserts it to the files
     total_amount = quantity_sold * price_per_unit
-    fhand.write(f'{item_name},{quantity_sold},{price_per_unit},{total_amount}')
+    fhand.write(f'{item_name},{quantity_sold},{price_per_unit},{total_amount}\n')
     print('Sales record saved successfully')
     fhand.close()
-    #delete this
-    print_display_main_menu()
-    #---------
     get_user_selection()
 
 # Views the entire files and displays it to the user
@@ -83,7 +76,7 @@ def view_all_records(total_units_sold = 0,
         print_display_main_menu()
         get_user_selection()
 
-
+    print('Name|Quantity|Price Per Unit|Total Amount')
     for lines in fhand:
         lines_info = lines.split(',')
 
@@ -110,7 +103,6 @@ def view_all_records(total_units_sold = 0,
 def clear_all_record():
     os.remove('sales_log.txt')
     print('All records cleared. No records remaining.')
-    print_display_main_menu()
     get_user_selection()
 
 
