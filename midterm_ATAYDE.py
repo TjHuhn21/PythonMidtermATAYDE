@@ -64,7 +64,6 @@ def add_sales_record():
     fhand.write(f'{item_name},{quantity_sold},{price_per_unit},{total_amount}\n')
     print('Sales record saved successfully')
     fhand.close()
-    get_user_selection()
 
 # Views the entire files and displays it to the user
 def view_all_records(total_units_sold = 0,
