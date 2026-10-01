@@ -1,2 +1,1 @@
-Item Name|Quantity|Price Per Unit|Total Amount
-Sushi,1,12.5,12.5
+sadhsadas,21,21.0,441.0
